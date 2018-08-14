@@ -23,7 +23,15 @@ sudo apt-get install -yqq \
   libprotobuf-dev protobuf-compiler \
   libgoogle-glog-dev libgflags-dev \
   python-dev python-pip python3-dev python3-pip \
-  libgphoto2-dev libeigen3-dev libhdf5-dev doxygen
+  build-essential cmake \
+  qt5-default libvtk6-dev \
+  zlib1g-dev libjpeg-dev libwebp-dev libpng-dev libtiff5-dev libjasper-dev libopenexr-dev libgdal-dev \
+  libdc1394-22-dev libavcodec-dev libavformat-dev libswscale-dev libtheora-dev libvorbis-dev \
+  libxvidcore-dev libx264-dev yasm libopencore-amrnb-dev libopencore-amrwb-dev libv4l-dev libxine2-dev \
+  libtbb-dev libeigen3-dev \
+  python-dev python-tk python-numpy python3-dev python3-tk python3-numpy \
+  ant default-jdk \
+  doxygen libgphoto2-dev libeigen3-dev libhdf5-dev doxygen
 
 #problematic packages
   # libfaac-dev 

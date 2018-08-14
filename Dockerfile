@@ -23,18 +23,22 @@ RUN apt-get -qq update; \
 bash /tmp/opencv.sh; \
 apt-get -y autoremove ; \
 apt-get clean ; \
+rm /tmp/opencv.sh && \
 rm -Rf /var/lib/apt/lists/*
-COPY continue.sh /tmp/continue.sh
-RUN apt-get -qq update; \
-bash /tmp/continue.sh; \
-apt-get -y autoremove ; \
-apt-get clean ; \
-rm -Rf /var/lib/apt/lists/*
+#COPY continue.sh /tmp/continue.sh
+#RUN apt-get -qq update; \
+#bash /tmp/continue.sh; \
+#apt-get -y autoremove ; \
+#apt-get clean ; \
+#rm /tmp/continue.sh && \
+#rm -Rf /var/lib/apt/lists/*
 
 COPY configure.sh /tmp/configure.sh
-RUN bash /tmp/configure.sh
+RUN bash /tmp/configure.sh \
+ && rm /tmp/configure.sh
 COPY compile.sh /tmp/compile.sh
-RUN bash /tmp/compile.sh
+RUN bash /tmp/compile.sh \
+ && rm /tmp/compile.sh
 
 
 ENV BUILD_FOLDER /root/opencv/build
