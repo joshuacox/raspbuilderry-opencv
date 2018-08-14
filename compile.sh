@@ -9,7 +9,7 @@ git checkout 3.3.1
 mkdir -p build
 cd build
 #make -j`nproc`
-make -j32
+make -j`nproc`
 sudo make install
 sudo sh -c 'echo "/usr/local/lib" >> /etc/ld.so.conf.d/opencv.conf'
 sudo ldconfig
