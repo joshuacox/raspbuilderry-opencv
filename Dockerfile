@@ -35,3 +35,10 @@ COPY configure.sh /tmp/configure.sh
 RUN bash /tmp/configure.sh
 COPY compile.sh /tmp/compile.sh
 RUN bash /tmp/compile.sh
+
+
+ENV BUILD_FOLDER /root/opencv/build
+
+WORKDIR ${BUILD_FOLDER}
+
+CMD ["/bin/bash", "-c", "make", "-f", "${BUILD_FOLDER}/Makefile"]
